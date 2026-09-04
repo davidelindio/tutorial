@@ -1,0 +1,34 @@
+---
+import Header from "../components/Header.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+const { pageTitle } = Astro.props;
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle}</title>
+	</head>
+	<body>
+		<Header />
+		<h1>{pageTitle}</h1>
+		<p>
+			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam ex
+			voluptas nesciunt ad alias aliquam eum atque repellendus nostrum
+			voluptatum reiciendis modi expedita quam, id debitis neque beatae!
+			Odio, eaque.
+		</p>
+        <slot />
+		<Footer />
+		<script>
+			import "../scripts/menu.js";
+		</script>
+	</body>
+</html>
